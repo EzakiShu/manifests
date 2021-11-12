@@ -11,14 +11,14 @@ spec:
     matchLabels:
       app: python
   strategy: {}
-  template: 
+  template:
     metadata:
       creationTimestamp: null
       labels:
         app: python
     spec:
       containers:
-        - image: yoichi00/container-ren:python-test
+        - image: yoichi00/containers:python11
           name: python
           resources: {}
 status: {}
