@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: python-entry
+  name: python-entry
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: "python-entry"
+  strategy: {}
+  template: 
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: python-entry
+    spec:
+      containers:
+        - image: yoichi00/containers:entry183
+          name: python-entry
+          resources: {}
+      nodeSelector:
+        type: master
+status: {}

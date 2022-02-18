@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: python-teian
+  name: python-teian
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: "python-teian"
+  strategy: {}
+  template: 
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: python-teian
+    spec:
+      containers:
+        - image: yoichi00/containers:teian256
+          name: python-teian
+          resources: {}
+      nodeSelector:
+        type: master
+status: {}
+
+

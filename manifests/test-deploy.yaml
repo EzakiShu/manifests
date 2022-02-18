@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: python-test
+  name: python-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: "python-test"
+  strategy: {}
+  template: 
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: python-test
+    spec:
+      containers:
+        - image: yoichi00/containers:teianv2253
+          name: python-test
+          resources: {}
+      nodeSelector:
+        type: master
+status: {}

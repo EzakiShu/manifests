@@ -1,0 +1,85 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: python-depth1
+  name: python-depth1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-depth1
+  strategy: {}
+  template: 
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: python-depth1
+    spec:
+      containers:
+        - image: yoichi00/containers:depth-estimate181
+          name: python-depth1
+          resources: {}
+      nodeSelector:
+        type: edge1
+status: {}
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: python-depth2
+  name: python-depth2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-depth2
+  strategy: {}
+  template: 
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: python-depth2
+    spec:
+      containers:
+        - image: yoichi00/containers:depth-estimate181
+          name: python-depth2
+          resources: {}
+      nodeSelector:
+        type: edge3
+status: {}
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: python-depth3
+  name: python-depth3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-depth3
+  strategy: {}
+  template: 
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: python-depth3
+    spec:
+      containers:
+        - image: yoichi00/containers:depth-estimate181
+          name: python-depth3
+          resources: {}
+      nodeSelector:
+        type: edge4
+status: {}
+

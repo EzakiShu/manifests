@@ -1,0 +1,85 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: python-detection1
+  name: python-detection1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: "python-detection1"
+  strategy: {}
+  template: 
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: python-detection1
+    spec:
+      containers:
+        - image: yoichi00/containers:people_detection257
+          name: python-detection1
+          resources: {}
+      nodeSelector :
+        type: edge1
+status: {}
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: python-detection2
+  name: python-detection2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: "python-detection2"
+  strategy: {}
+  template: 
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: python-detection2
+    spec:
+      containers:
+        - image: yoichi00/containers:people_detection257
+          name: python-detection2
+          resources: {}
+      nodeSelector :
+        type: edge3
+status: {}
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: python-detection3
+  name: python-detection3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: "python-detection3"
+  strategy: {}
+  template: 
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: python-detection3
+    spec:
+      containers:
+        - image: yoichi00/containers:people_detection257
+          name: python-detection3
+          resources: {}
+      nodeSelector :
+        type: edge4
+status: {}
+
